@@ -1,0 +1,21 @@
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0eafc, #cfdef3);
+  padding: 1rem;
+}
+
+.login-box {
+  width: 100%;
+  max-width: 400px;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.login-error {
+  color: #dc3545;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
