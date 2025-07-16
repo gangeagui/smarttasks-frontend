@@ -1,0 +1,107 @@
+/* Contenedor */
+.users-container {
+  padding: 2rem;
+}
+
+/* Encabezado */
+.users-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Botón crear */
+.create-button {
+  background: #2575fc;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.create-button:hover {
+  background: #1a5cd8;
+}
+
+/* Tabla sin bordes pesados */
+.users-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.5rem;
+}
+
+/* Encabezados */
+.users-table th {
+  text-align: left;
+  color: #555;
+  font-size: 0.9rem;
+  padding: 0.75rem;
+}
+
+/* Filas */
+.users-table tr {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Celdas */
+.users-table td {
+  padding: 0.75rem;
+  font-size: 0.95rem;
+}
+
+/* Botones de acción */
+.action-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+  transition: color 0.2s;
+}
+
+.action-button.edit {
+  color: #2575fc;
+}
+
+.action-button.edit:hover {
+  color: #1a5cd8;
+}
+
+.action-button.delete {
+  color: #ff4b5c;
+}
+
+.action-button.delete:hover {
+  color: #e04352;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .users-table thead {
+    display: none;
+  }
+
+  .users-table tr {
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .users-table td {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem;
+    border-bottom: 1px solid #eee;
+  }
+
+  .users-table td:last-child {
+    border: none;
+  }
+}

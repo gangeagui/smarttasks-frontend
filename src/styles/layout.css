@@ -1,0 +1,93 @@
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f7fa;
+}
+
+.sidebar {
+  width: 190px;
+  background: #2a5298;
+  color: white;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 1rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+.sidebar-header {
+  margin-bottom: 2rem;
+}
+
+.sidebar-brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  padding: 0.6rem;
+}
+
+.sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+
+.sidebar-icon {
+  margin-right: 0.75rem;
+  font-size: 1.2rem;
+}
+
+.sidebar-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 1rem;
+}
+
+.sidebar-user {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.avatar-icon {
+  font-size: 1.4rem;
+  margin-right: 0.5rem;
+}
+
+.logout-button {
+  background: #2a5298;
+  border: none;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.logout-button:hover {
+  background: #e04352;
+}
+
+.main-area {
+  margin-left: 240px;
+  padding: 2rem;
+  flex: 1;
+}

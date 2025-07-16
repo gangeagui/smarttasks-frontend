@@ -1,7 +1,16 @@
-import { useAuth } from "../context/AuthContext";
+import { Outlet } from "react-router-dom";
+import { useAuth } from "../context/useAuth";
 import { useNavigate, Link } from "react-router-dom";
+import {
+  FaTasks,
+  FaUserFriends,
+  FaCog,
+  FaHome,
+  FaSignOutAlt,
+} from "react-icons/fa";
+import "../styles/layout.css";
 
-function Layout({ children }) {
+function Layout() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
 
@@ -11,38 +20,39 @@ function Layout({ children }) {
   };
 
   return (
-    <div>
-      {/* Navbar */}
-      <nav
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "1rem",
-          background: "#333",
-          color: "white",
-        }}
-      >
-        <div>
-          <strong>SmartTasks</strong>
-          <Link to="/dashboard" style={{ marginLeft: "1rem", color: "#ccc" }}>
+    <div className="layout-container">
+      <aside className="sidebar">
+        <div className="sidebar-header">
+          <strong className="sidebar-brand">SmartTasks</strong>
+          <p>{user.username}</p>
+        </div>
+        <nav className="sidebar-nav">
+          <Link to="/dashboard" className="sidebar-link">
+            <FaHome className="sidebar-icon" />
             Inicio
           </Link>
-          <Link to="/tasks" style={{ marginLeft: "1rem", color: "#ccc" }}>
+          <Link to="/tasks" className="sidebar-link">
+            <FaTasks className="sidebar-icon" />
             Tareas
           </Link>
-        </div>
-        <div>
-          {user && (
-            <>
-              <span style={{ marginRight: "1rem" }}>Hola, {user.username}</span>
-              <button onClick={handleLogout}>Cerrar sesión</button>
-            </>
-          )}
-        </div>
-      </nav>
+          <Link to="/users" className="sidebar-link">
+            <FaUserFriends className="sidebar-icon" />
+            Usuarios
+          </Link>
+          <Link to="/configuration" className="sidebar-link">
+            <FaCog className="sidebar-icon" />
+            Configuración
+          </Link>
+          <button className="logout-button" onClick={handleLogout}>
+            <FaSignOutAlt className="sidebar-icon" />
+            Cerrar sesión
+          </button>
+        </nav>
+      </aside>
 
-      <main style={{ padding: "2rem" }}>{children}</main>
+      <main className="main-area">
+        <Outlet />
+      </main>
     </div>
   );
 }
