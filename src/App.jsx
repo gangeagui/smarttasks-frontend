@@ -5,6 +5,7 @@ import TasksPage from "./pages/TaskPage";
 import PrivateRoute from "./components/PrivateRoute";
 import UserPage from "./pages/UserPage";
 import Layout from "./components/Layout";
+import ConfigurationPage from "./pages/ConfigurationPage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/tasks" element={<TasksPage />} />
         <Route path="/users" element={<UserPage />} />
+        <Route path="/configuration" element={<ConfigurationPage/>} />
       </Route>
     </Routes>
   );
