@@ -1,9 +1,7 @@
-/* Contenedor */
 .users-container {
   padding: 2rem;
 }
 
-/* Encabezado */
 .users-header {
   display: flex;
   justify-content: space-between;
@@ -11,7 +9,6 @@
   margin-bottom: 1.5rem;
 }
 
-/* Botón crear */
 .create-button {
   background: #2575fc;
   color: white;
@@ -29,14 +26,12 @@
   background: #1a5cd8;
 }
 
-/* Tabla sin bordes pesados */
 .users-table {
   width: 100%;
   border-collapse: separate;
   border-spacing: 0 0.5rem;
 }
 
-/* Encabezados */
 .users-table th {
   text-align: left;
   color: #555;
@@ -44,20 +39,17 @@
   padding: 0.75rem;
 }
 
-/* Filas */
 .users-table tr {
   background: white;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-/* Celdas */
 .users-table td {
   padding: 0.75rem;
   font-size: 0.95rem;
 }
 
-/* Botones de acción */
 .action-button {
   background: none;
   border: none;
@@ -81,27 +73,4 @@
 
 .action-button.delete:hover {
   color: #e04352;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .users-table thead {
-    display: none;
-  }
-
-  .users-table tr {
-    display: block;
-    margin-bottom: 1rem;
-  }
-
-  .users-table td {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.75rem;
-    border-bottom: 1px solid #eee;
-  }
-
-  .users-table td:last-child {
-    border: none;
-  }
 }

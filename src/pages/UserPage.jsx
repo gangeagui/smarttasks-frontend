@@ -1,4 +1,4 @@
-//import "../styles/userPage.css";
+import "../styles/userPage.css";
 import { useState, useEffect } from "react";
 import { getUsers, deleteUser, createUser, updateUser } from "../services/userService";
 import { FaPlus, FaEdit, FaTrash } from "react-icons/fa";
