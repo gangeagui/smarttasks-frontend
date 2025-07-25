@@ -91,20 +91,20 @@ body {
   100% { transform: translateX(0); }
 }
 
-.forgot-password {
+.forgot-password, .register-link{
   margin-top: 1.5rem;
   text-align: center;
   font-size: 0.95rem;
   color: #666;
 }
 
-.forgot-password a {
+.forgot-password a, .register-link a {
   color: #2575fc;
   font-weight: 500;
   text-decoration: none;
 }
 
-.forgot-password a:hover {
+.forgot-password a:hover, .register-link a:hover {
   color: #1a5cd8;
   text-decoration: underline;
 }

@@ -60,6 +60,9 @@ function LoginPage() {
         <p className="forgot-password">
           ¿Olvidaste tu <a href="#">contraseña?</a>
         </p>
+        <p className="register-link">
+          ¿No tienes una cuenta? <a href="/register">Regístrate</a>
+        </p>
       </form>
     </div>
   );
