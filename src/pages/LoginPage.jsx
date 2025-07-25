@@ -1,4 +1,4 @@
-import "../styles/login.css";
+import "../styles/loginPage.css";
 import { useState } from "react";
 import { useAuth } from "../context/useAuth";
 import { loginRequest } from "../services/authService";
@@ -23,17 +23,17 @@ function LoginPage() {
   };
 
   return (
-    <div className="login-container d-flex justify-content-center align-items-center">
+    <div className="login-container">
       <form className="login-box" onSubmit={handleSubmit}>
-        <h2 className="text-center mb-4">Iniciar Sesión</h2>
+        <h2>Iniciar Sesión</h2>
 
         {error && <p className="login-error">{error}</p>}
 
-        <div className="mb-3">
-          <label className="form-label">Correo electrónico</label>
+        <div className="form-group">
+          <label htmlFor="email">Correo electrónico</label>
           <input
+            id="email"
             type="email"
-            className="form-control"
             placeholder="ejemplo@correo.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
@@ -41,11 +41,11 @@ function LoginPage() {
           />
         </div>
 
-        <div className="mb-3">
-          <label className="form-label">Contraseña</label>
+        <div className="form-group">
+          <label htmlFor="password">Contraseña</label>
           <input
+            id="password"
             type="password"
-            className="form-control"
             placeholder="Ingresa tu contraseña"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -53,25 +53,12 @@ function LoginPage() {
           />
         </div>
 
-        <div className="mb-3 form-check">
-          <input
-            type="checkbox"
-            className="form-check-input"
-            id="rememberCheck"
-          />
-          <label className="form-check-label" htmlFor="rememberCheck">
-            Remember me
-          </label>
-        </div>
+        <button type="submit" className="login-button">
+          Iniciar Sesión
+        </button>
 
-        <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
-            Iniciar Sesión
-          </button>
-        </div>
-
-        <p className="forgot-password text-center mt-3">
-          Forgot <a href="#">password?</a>
+        <p className="forgot-password">
+          ¿Olvidaste tu <a href="#">contraseña?</a>
         </p>
       </form>
     </div>
