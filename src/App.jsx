@@ -6,11 +6,13 @@ import PrivateRoute from "./components/PrivateRoute";
 import UserPage from "./pages/UserPage";
 import Layout from "./components/Layout";
 import ConfigurationPage from "./pages/ConfigurationPage";
+import RegisterPage from "./pages/RegisterPage";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
       <Route
         element={
           <PrivateRoute>
