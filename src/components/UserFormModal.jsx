@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-//import "../styles/userModal.css";
+import "../styles/userModal.css";
 
 function UserFormModal({ show, onClose, onSave, user }) {
   const [form, setForm] = useState({
@@ -38,7 +38,6 @@ function UserFormModal({ show, onClose, onSave, user }) {
       return;
     }
 
-    // Cuando editas, la contraseña puede quedar vacía
     if (!user && !form.password) {
       setError("La contraseña es obligatoria");
       return;
