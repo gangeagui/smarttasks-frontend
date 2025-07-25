@@ -1,13 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { useAuth } from "../context/useAuth";
 import { useNavigate, Link } from "react-router-dom";
-import {
-  FaTasks,
-  FaUserFriends,
-  FaCog,
-  FaHome,
-  FaSignOutAlt,
-} from "react-icons/fa";
+import { FaTasks, FaUserFriends, FaCog, FaHome, FaSignOutAlt } from "react-icons/fa";
 import "../styles/layout.css";
 
 function Layout() {
@@ -29,16 +23,18 @@ function Layout() {
         <nav className="sidebar-nav">
           <Link to="/dashboard" className="sidebar-link">
             <FaHome className="sidebar-icon" />
-            Inicio
+            Dashboard
           </Link>
           <Link to="/tasks" className="sidebar-link">
             <FaTasks className="sidebar-icon" />
             Tareas
           </Link>
-          <Link to="/users" className="sidebar-link">
-            <FaUserFriends className="sidebar-icon" />
-            Usuarios
-          </Link>
+          {user?.role === "ROLE_ADMIN" && (
+            <Link to="/users" className="sidebar-link">
+              <FaUserFriends className="sidebar-icon" />
+              Usuarios
+            </Link>
+          )}
           <Link to="/configuration" className="sidebar-link">
             <FaCog className="sidebar-icon" />
             Configuración

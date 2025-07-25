@@ -13,6 +13,7 @@ export function AuthProvider({ children }) {
           email: decoded.email,
           username: decoded.username,
           id: decoded.id,
+          role: decoded.role
         };
       } catch (err) {
         console.error("Token inválido:", err);
@@ -30,6 +31,7 @@ export function AuthProvider({ children }) {
         email: decoded.email,
         username: decoded.username,
         id: decoded.id,
+        role: decoded.role
       };
       localStorage.setItem("token", token);
       setUser(userData);
