@@ -1,54 +1,64 @@
-import Layout from "../components/Layout";
-
-const tasksMock = [
-  { id: 1, title: "Diseñar login", status: "pendiente" },
-  { id: 2, title: "Crear layout", status: "en-progreso" },
-  { id: 3, title: "Conectar backend", status: "completado" },
-  { id: 4, title: "Probar autenticación", status: "pendiente" },
-];
+import { useState } from "react";
+import "../styles/tasksPage.css";
 
 function TasksPage() {
-  const groupedTasks = {
-    pendiente: [],
-    "en-progreso": [],
-    completado: [],
+  const [tasks, setTasks] = useState([
+    { id: 1, title: "Configurar proyecto", status: "Pendiente" },
+    { id: 2, title: "Diseñar interfaz", status: "En progreso" },
+    { id: 3, title: "Revisión final", status: "Completada" },
+  ]);
+
+  const [showModal, setShowModal] = useState(false);
+  const [newTask, setNewTask] = useState("");
+
+  const handleAddTask = () => {
+    if (newTask.trim() !== "") {
+      setTasks([...tasks, { id: Date.now(), title: newTask, status: "Pendiente" }]);
+      setNewTask("");
+      setShowModal(false);
+    }
   };
 
-  tasksMock.forEach((task) => {
-    groupedTasks[task.status].push(task);
-  });
-
   return (
-    <Layout>
-      <h2>Mis Tareas</h2>
-      <div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
-        {Object.entries(groupedTasks).map(([status, tasks]) => (
-          <div
-            key={status}
-            style={{ flex: 1, border: "1px solid #ccc", padding: "1rem" }}
-          >
-            <h3>
-              {status === "pendiente" && "🟨 Pendiente"}
-              {status === "en-progreso" && "🟦 En progreso"}
-              {status === "completado" && "🟩 Completado"}
-            </h3>
-            {tasks.map((task) => (
-              <div
-                key={task.id}
-                style={{
-                  background: "#f9f9f9",
-                  border: "1px solid #ddd",
-                  padding: "0.5rem",
-                  marginTop: "0.5rem",
-                }}
-              >
-                {task.title}
-              </div>
-            ))}
+    <div className="tasks-container">
+      <div className="tasks-header">
+        <h1>Tus Tareas</h1>
+        <button className="btn-primary" onClick={() => setShowModal(true)}>
+          + Nueva Tarea
+        </button>
+      </div>
+
+      <div className="tasks-list">
+        {tasks.map((task) => (
+          <div key={task.id} className={`task-card ${task.status.toLowerCase()}`}>
+            <h3>{task.title}</h3>
+            <span className="status">{task.status}</span>
           </div>
         ))}
       </div>
-    </Layout>
+
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal-content">
+            <h2>Nueva Tarea</h2>
+            <input
+              type="text"
+              placeholder="Título de la tarea"
+              value={newTask}
+              onChange={(e) => setNewTask(e.target.value)}
+            />
+            <div className="modal-actions">
+              <button className="btn-secondary" onClick={() => setShowModal(false)}>
+                Cancelar
+              </button>
+              <button className="btn-primary" onClick={handleAddTask}>
+                Guardar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
   );
 }
 
