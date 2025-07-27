@@ -1,7 +1,13 @@
 import { Outlet } from "react-router-dom";
 import { useAuth } from "../context/useAuth";
 import { useNavigate, Link } from "react-router-dom";
-import { FaTasks, FaUserFriends, FaCog, FaHome, FaSignOutAlt } from "react-icons/fa";
+import {
+  FaTasks,
+  FaUserFriends,
+  FaCog,
+  FaHome,
+  FaSignOutAlt,
+} from "react-icons/fa";
 import "../styles/layout.css";
 
 function Layout() {
@@ -17,8 +23,11 @@ function Layout() {
     <div className="layout-container">
       <aside className="sidebar">
         <div className="sidebar-header">
-          <strong className="sidebar-brand">SmartTasks</strong>
-          <p>{user.username}</p>
+          <h2 className="sidebar-brand">SmartTasks</h2>
+          <p className="sidebar-username">{user.username}</p>
+          <small className="sidebar-role">
+            {user.role === "ROLE_ADMIN" ? "Administrador" : "Usuario"}
+          </small>
         </div>
         <nav className="sidebar-nav">
           <Link to="/dashboard" className="sidebar-link">
@@ -39,11 +48,14 @@ function Layout() {
             <FaCog className="sidebar-icon" />
             Configuración
           </Link>
+        </nav>
+
+        <div className="sidebar-footer">
           <button className="logout-button" onClick={handleLogout}>
             <FaSignOutAlt className="sidebar-icon" />
             Cerrar sesión
           </button>
-        </nav>
+        </div>
       </aside>
 
       <main className="main-area">

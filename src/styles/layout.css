@@ -5,9 +5,10 @@
 }
 
 .sidebar {
-  width: 190px;
-  background: #2a5298;
+  width: 220px;
+  background: linear-gradient(180deg, #1e3c72, #2a5298);
   color: white;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1.5rem 1rem;
@@ -15,16 +16,29 @@
   left: 0;
   top: 0;
   bottom: 0;
-  text-align: center;
+  transition: all 0.3s ease;
 }
 
 .sidebar-header {
+  text-align: center;
   margin-bottom: 2rem;
 }
 
 .sidebar-brand {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.sidebar-username {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f0f0f0;
+}
+
+.sidebar-role {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
 }
 
 .sidebar-nav {
@@ -40,11 +54,12 @@
   margin-bottom: 1rem;
   font-weight: 500;
   border-radius: 6px;
-  padding: 0.6rem;
+  padding: 0.8rem;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .sidebar-link:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   color: #fff;
 }
 
@@ -56,38 +71,61 @@
 .sidebar-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   padding-top: 1rem;
-}
-
-.sidebar-user {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.avatar-icon {
-  font-size: 1.4rem;
-  margin-right: 0.5rem;
+  text-align: center;
 }
 
 .logout-button {
-  background: #2a5298;
-  border: none;
+  width: 100%;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.5);
   color: white;
-  padding: 0.6rem 1rem;
+  padding: 0.7rem;
   border-radius: 6px;
   font-weight: 600;
   cursor: pointer;
   display: flex;
+  justify-content: center;
   align-items: center;
   font-size: 0.95rem;
+  transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .logout-button:hover {
   background: #e04352;
+  border-color: #e04352;
 }
 
 .main-area {
-  margin-left: 240px;
+  margin-left: 220px;
   padding: 2rem;
   flex: 1;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px;
+  }
+
+  .sidebar-header h2,
+  .sidebar-username,
+  .sidebar-role {
+    display: none;
+  }
+
+  .sidebar-link {
+    justify-content: center;
+  }
+
+  .sidebar-link span {
+    display: none;
+  }
+
+  .logout-button {
+    font-size: 0;
+    padding: 0.8rem;
+  }
+
+  .main-area {
+    margin-left: 70px;
+  }
 }
