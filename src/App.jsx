@@ -3,7 +3,7 @@ import LoginPage from "./pages/LoginPage";
 import DashboardPage from "./pages/DashboardPage";
 import TasksPage from "./pages/TaskPage";
 import PrivateRoute from "./components/PrivateRoute";
-import UserPage from "./pages/UserPage";
+import UsersPage from "./pages/UsersPage";
 import Layout from "./components/Layout";
 import ConfigurationPage from "./pages/ConfigurationPage";
 import RegisterPage from "./pages/RegisterPage";
@@ -22,7 +22,7 @@ function App() {
       >
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/tasks" element={<TasksPage />} />
-        <Route path="/users" element={<UserPage />} />
+        <Route path="/users" element={<UsersPage />} />
         <Route path="/configuration" element={<ConfigurationPage/>} />
       </Route>
     </Routes>
