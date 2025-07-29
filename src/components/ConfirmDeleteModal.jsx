@@ -1,23 +1,22 @@
-import React from "react";
-//import "../styles/userModal.css";
+import "../styles/modal.css";
 
 function ConfirmDeleteModal({ show, onClose, onConfirm, user }) {
   if (!show) return null;
 
   return (
     <div className="modal-overlay">
-      <div className="modal">
-        <h3>Eliminar usuario</h3>
+      <div className="modal-container">
+        <h3>¿Eliminar Usuario?</h3>
         <p>
-          ¿Estás seguro de que quieres eliminar al usuario{" "}
-          <strong>{user?.username}</strong>?
+          Estás a punto de eliminar al usuario <strong>{user?.username}</strong>.
         </p>
+
         <div className="modal-actions">
-          <button className="btn btn-secondary" onClick={onClose}>
+          <button className="btn cancel" onClick={onClose}>
             Cancelar
           </button>
-          <button className="btn btn-danger" onClick={onConfirm}>
-            Sí, eliminar
+          <button className="btn delete" onClick={onConfirm}>
+            Eliminar
           </button>
         </div>
       </div>
