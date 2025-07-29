@@ -1,0 +1,135 @@
+.configuration-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  max-width: 1000px;
+  margin: 2rem auto;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+.configuration-container h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.config-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.config-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.config-section h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.config-card {
+  background: #f8f9fa;
+  border-radius: 10px;
+  padding: 1.2rem;
+  border: 1px solid #e0e0e0;
+  font-size: 0.95rem;
+}
+
+.config-card p {
+  margin: 0.3rem 0;
+}
+
+.config-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.config-form label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.config-form input {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border 0.3s;
+}
+
+.config-form input:focus {
+  border-color: #2575fc;
+  outline: none;
+}
+
+.save-button {
+  background: #2575fc;
+  color: white;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+  width: 100%;
+}
+
+.save-button:hover {
+  background: #1a5cd8;
+}
+
+.danger-zone {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 1.5rem;
+}
+
+.warning-text {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.delete-button {
+  background: #ff4b5c;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.delete-button:hover {
+  background: #e04352;
+}
+
+.config-form input {
+  width: 454px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
