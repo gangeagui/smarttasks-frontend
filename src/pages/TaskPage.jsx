@@ -4,7 +4,7 @@ import "../styles/tasksPage.css";
 function TasksPage() {
   const [tasks, setTasks] = useState([
     { id: 1, title: "Configurar proyecto", status: "Pendiente" },
-    { id: 2, title: "Diseñar interfaz", status: "En progreso" },
+    { id: 2, title: "Diseñar interfaz", status: "Progreso" },
     { id: 3, title: "Revisión final", status: "Completada" },
   ]);
 
