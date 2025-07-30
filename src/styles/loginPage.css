@@ -45,6 +45,7 @@
   border: 1px solid #ccc;
   font-size: 1rem;
   transition: all 0.3s ease;
+  width: 100%;
 }
 
 .form-group input:focus {
