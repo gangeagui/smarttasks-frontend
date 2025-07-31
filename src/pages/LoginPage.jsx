@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useAuth } from "../context/useAuth";
 import { loginRequest } from "../services/authService";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function LoginPage() {
   const [email, setEmail] = useState("");
@@ -58,7 +59,7 @@ function LoginPage() {
         </button>
 
         <p className="forgot-password">
-          ¿Olvidaste tu <a href="#">contraseña?</a>
+          ¿Olvidaste tu <Link to="/forgot-password">contraseña?</Link>
         </p>
         <p className="register-link">
           ¿No tienes una cuenta? <a href="/register">Regístrate</a>
